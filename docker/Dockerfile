@@ -1,13 +1,18 @@
+# Stage 1: Build Next.js Application
 FROM node:22-alpine AS builder
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Enable pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --frozen-lockfile || pnpm install
+RUN pnpm install --frozen-lockfile || (pnpm approve-builds --all && pnpm install)
 
 COPY . .
+
+# Ensure public directory exists
+RUN mkdir -p public
 
 # Build Next.js with standalone output
 ENV NEXT_TELEMETRY_DISABLED=1
