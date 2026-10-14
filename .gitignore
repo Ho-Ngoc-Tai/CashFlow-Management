@@ -1,0 +1,71 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.pnpm-store
+
+# Testing & Coverage
+/coverage
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+
+# Next.js Build Output
+/.next/
+/out/
+/dist/
+/build
+
+# Production Artifacts
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs & Debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment & Secret Files (Chặn toàn bộ file môi trường chứa bí mật, chỉ giữ lại .env.example)
+.env
+.env.*
+!.env.example
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Specific
+.idea/
+.fleet/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache directories
+.cache/
+.turbo/
+.eslintcache
+.stylelintcache
+
+# Temporary & Local Docker Data
+*.pem
+*.key
+docker/.data/

@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8faff;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --primary: #4f46e5;
+    --primary-foreground: #ffffff;
+    --secondary: #06b6d4;
+    --secondary-foreground: #ffffff;
+    --tertiary: #10b981;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+    --radius: 0.75rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Crisp White Light-Mode RGB Cards & Glows */
+.rgb-card-light {
+  background: #ffffff;
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(99, 102, 241, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rgb-card-light:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.12), 0 6px 16px -2px rgba(236, 72, 153, 0.1);
+}
+
+/* RGB Gradient Borders */
+.rgb-border-gradient {
+  position: relative;
+}
+
+.rgb-border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.55), rgba(236, 72, 153, 0.55), rgba(6, 182, 212, 0.55));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Colorful Vibrant RGB Gradients */
+.bg-gradient-rgb-cta {
+  background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #06b6d4 100%);
+}
+
+.bg-gradient-rgb-cta:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #db2777 50%, #0891b2 100%);
+  box-shadow: 0 8px 25px -4px rgba(236, 72, 153, 0.4), 0 4px 12px -2px rgba(99, 102, 241, 0.4);
+}
+
+.rgb-glow-cyan {
+  box-shadow: 0 4px 16px -2px rgba(6, 182, 212, 0.35);
+}
+
+.rgb-glow-magenta {
+  box-shadow: 0 4px 16px -2px rgba(236, 72, 153, 0.35);
+}
+
+.rgb-glow-indigo {
+  box-shadow: 0 4px 16px -2px rgba(99, 102, 241, 0.35);
+}
+
+.rgb-glow-emerald {
+  box-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.35);
+}
+
+/* Tabular lining figures for financial tables */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" on, "cv05" on;
+}

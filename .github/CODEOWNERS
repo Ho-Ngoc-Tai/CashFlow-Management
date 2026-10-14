@@ -1,0 +1,10 @@
+# Default code owners for enterprise repository
+* @tech-lead @lead-architect
+
+# Specific domain ownership
+/src/app/routes/ @lead-architect
+/src/proxy.ts @security-officer @lead-architect
+/docker/ @devops-team
+/Jenkinsfile @devops-team
+/.github/ @devops-team
+/src/app/stores/ @frontend-core-team
